@@ -12,7 +12,6 @@ async function handleNewMatch() {
         return;
     }
     const data = await response.json();
-    console.log(data.value);
     randomNumber = data.value;
     changeDisplay(textDisplayColor["default"], 0);
 }
@@ -29,17 +28,8 @@ function handleUserGuess(event) {
 }
 function handleNumberInput(input) {
     const value = Number(input.value);
-    if (value < lowerLimit) {
-        userGuess = "";
-        input.setCustomValidity("O n\xfamero n\xe3o pode ser menor que 1");
-        input.reportValidity();
-    } else if (value > upperLimit) {
-        input.setCustomValidity("O n\xfamero n\xe3o pode ser maior que 300");
-        input.reportValidity();
-    } else {
-        userGuess = String(value);
-        input.setCustomValidity("");
-    }
+    if (value >= lowerLimit && value <= upperLimit) userGuess = String(value);
+    else if (value === 0) userGuess = "";
     setDisabledElements();
 }
 function setDisabledElements() {
