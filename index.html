@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+		<link rel="icon" type="image/svg+xml" href="images/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="stylesheet" href="styles/global.css" />
+		<link rel="stylesheet" href="styles/home.css" />
+		<link rel="stylesheet" href="styles/ledDisplay.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
+		<title>Adivinhe o número!</title>
+	</head>
+
+	<body>
+		<main>
+            <div class="title">
+                <h1>Qual é o número?</h1>
+                <hr />
+            </div>
+
+            <div class="displayContainer">
+                <span id="displayText"></span>
+
+                <div id="displayNumber"></div>
+
+                <button class='newMatchButton' onclick="handleNewMatch()">
+                    <img class='refreshIcon' src="images/refresh.svg" alt="Nova partida" />
+                    NOVA PARTIDA
+                </button>
+            </div>
+
+            <form class='userGuess' onsubmit="handleUserGuess(event)">
+                <input
+                    class='guessInput'
+                    type="number"
+                    placeholder='Digite o palpite'
+                    oninput="handleNumberInput(this)"
+                />
+
+                <button class='guessSubmit' type="submit">
+                    ENVIAR
+                </button>
+            </form>
+        </main>
+
+		<script src="scripts/constants.js"></script>
+		<script src="scripts/functions.js"></script>
+	</body>
+</html>
