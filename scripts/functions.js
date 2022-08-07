@@ -16,7 +16,6 @@ async function handleNewMatch(){
     }
     
     const data = await response.json()
-    console.log(data.value)
 
     randomNumber = data.value
     changeDisplay(textDisplayColor['default'], 0)
@@ -46,18 +45,11 @@ function handleUserGuess(event){
 function handleNumberInput(input){
     const value = Number(input.value)
 
-    if (value < lowerLimit){
-        userGuess = ''
-        input.setCustomValidity('O número não pode ser menor que 1')
-        input.reportValidity()
-    }
-    else if (value > upperLimit){ 
-        input.setCustomValidity('O número não pode ser maior que 300')
-        input.reportValidity()
-    }
-    else{
+    if (value >= lowerLimit && value <= upperLimit){     
         userGuess = String(value)
-        input.setCustomValidity('')
+    }
+    else if (value === 0){
+        userGuess = ''
     }
 
     setDisabledElements()
