@@ -1,7 +1,16 @@
+<!--
+    Desenvolvido por Sergio Luiz Rodrigues de Oliveira Junior
+    para o processo seletivo 2688311 da Studio Sol em agosto/22.
+
+    Publicado em: https://juniorsergio.github.io/number-guessing-game/
+    Para ver outros projetos meus acesse: https://juniorsergio.github.io/
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+        <meta name="description" content="Utilizando apenas HTML, CSS e Javascript, essa página web implementa um jogo de adivinhação, no qual uma API externa gera um número aleatório entre 1 e 300, e o jogador deve adivinhar que número é esse." />
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,18 +38,18 @@
 
                 <div id="displayNumber"></div>
 
-                <button class='newMatchButton' onclick="handleNewMatch()">
+                <button class='newGameButton' onclick="handleNewGame()">
                     <img class='refreshIcon' src="images/refresh.svg" alt="Nova partida" />
                     NOVA PARTIDA
                 </button>
             </div>
 
-            <form class='userGuess' onsubmit="handleUserGuess(event)">
+            <form class='userGuess' onsubmit="handleGuessSubmit(event)">
                 <input
                     class='guessInput'
                     type="number"
                     placeholder='Digite o palpite'
-                    oninput="handleNumberInput(this)"
+                    oninput="handleGuessInput(this)"
                 />
 
                 <button class='guessSubmit' type="submit">

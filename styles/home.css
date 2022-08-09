@@ -44,7 +44,7 @@
     height: 24px;
 }
 
-.newMatchButton {
+.newGameButton {
     background-image: linear-gradient(var(--gray-700), var(--gray-400));
 
     display: flex;
@@ -52,7 +52,7 @@
     gap: 8px;
 }
 
-.newMatchButton:disabled {
+.newGameButton:disabled {
     visibility: hidden;
 }
 

@@ -24,7 +24,7 @@ const ledLight = {
     }
 }
 
-const textDisplayColor = {
+const textDisplay = {
     success: {
         id: 'success',
         text: 'Você acertou!!!',
