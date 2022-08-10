@@ -34,10 +34,10 @@ async function handleNewGame(){
 */
 function handleGuessSubmit(event){
     event.preventDefault()
-    userGuess = ''
 
     const guess = Number(userGuess)
     let id = ''
+    userGuess = ''
 
     if (randomNumber === guess) {
         id = 'success'
