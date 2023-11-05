@@ -7,6 +7,7 @@
     
 .title h1 {
     font-size: 2.25rem;
+    text-align: center;
     background: linear-gradient(var(--primary), var(--primary-dark));
 
     background-clip: text;
